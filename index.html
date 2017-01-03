@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Character Encodings Overview</title>
+        <meta name="description" content="Let's dive into how the characters are encoded in the computer.">
+        <meta name="author" content="David Alberto Montaño Fetecua">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/presentacion.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1><b>Character Encodings Overview</b></h1>
+				    <h2>(╯°□°）╯︵ ┻━┻</h2>
+				    <a href="http://www.seven4n.com">
+				    	<img data-src="./images/S4N.png">
+				    </a>
+				    <p>
+			            <small>Author:
+		                	<a href="mailto:davidmontano@seven4n.com">David Montaño</a>
+			            </small>
+				    </p>
+				</section>
+
+		        <section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
+			        <section>
+			            <h2>Agenda</h2>
+			            <ul>
+							<li class="fragment">Definitions</li>
+							<li class="fragment">ASCII</li>
+			                <li class="fragment">UTF-8</li>
+			                <li class="fragment">Bibliography</li>
+			            </ul>
+			        </section>
+
+		        </section>
+
+		        <section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
+
+			        <section>
+			            <h2>Definitions</h2>
+			        </section>
+
+			        <section>
+			            <h3>Bytes</h3>
+			        </section>
+
+			        <section>
+			            <h3>Character</h3>
+			            <p></p>
+			        </section>
+
+			        <section>
+			            <h3>Character Set</h3>
+			            <p></p>
+			        </section>
+
+			        <section>
+			            <h3>Coded Character Set</h3>
+			            <p></p>
+			        </section>
+
+			        <section>
+			            <h3>Code Point</h3>
+			            <p></p>
+			        </section>
+
+			        <section>
+			            <h3>Code Unit</h3>
+			            <p></p>
+			        </section>
+
+		        </section>
+
+		        <section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
+
+			        <section>
+			            <h2>ASCII</h2>
+			        </section>
+
+			        <section>
+			            <h3>7 Bit Representation</h3>
+			            <p></p>
+			        </section>
+
+	        	</section>
+
+		        <section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
+
+			        <section>
+			            <h2>UTF-8</h2>
+			        </section>
+
+			        <section>
+			        	<h3>Multi Byte representation</h3>
+			        </section>
+
+		        </section>
+
+		        <section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
+
+			        <section>
+			            <h2>Bibliography</h2>
+			            <ul>
+			            	<li><a href="https://encoding.spec.whatwg.org/">Encoding: Living Standard</a></li>
+			            	<li>David Zentgraf: <a href="http://kunststube.net/encoding/">What Every Programmer Absolutely, Positively Needs To Know About Encodings And Character Sets To Work With Text</a></li>
+			            </ul>
+			        </section>
+
+		        </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
