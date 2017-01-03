@@ -74,7 +74,7 @@
 
 			        <section>
 			            <h3>Bytes</h3>
-			            <img src="images/byte.jpg" />
+			            <img onclick="zoom.to({element: this})" src="images/byte.jpg" />
 			        </section>
 
 			        <section>
@@ -88,12 +88,16 @@
 
 			        <section>
 			            <h3>File</h3>
-			            <img src="images/lorem.png" />
+			            <img onclick="zoom.to({element: this})" src="images/lorem.png" />
 			        </section>
 
 			        <section>
 			            <h3>Endianness and BOM</h3>
-			            <img src="images/bom.png" />
+			            <img onclick="zoom.to({element: this})" src="images/bom.png" />
+			            <pre onclick="zoom.to({element: this})"><code class="sh">
+[damontic@seven4n]$ lscpu | grep Endian
+Orden de los bytes:    Little Endian
+			         	</code></pre>
 			        </section>
 
 		        </section>
@@ -139,6 +143,23 @@
 		        <section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
 
 			        <section>
+			            <h2>Util Tips</h2>
+			        </section>
+
+			        <section>
+			        	<ul>
+							<li>Windows: alt codes (alt + 64)</li>
+							<ul><li>decimal</li></ul>
+			        		<li>Linux: Ctrl + Shift + u</li>
+			        		<ul><li>hexadecimal</li></ul>
+			        	</ul>
+			        </section>
+
+		        </section>
+
+		        <section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
+
+			        <section>
 			            <h2>Bibliography</h2>
 			            <ul>
 			            	<li><a href="https://encoding.spec.whatwg.org/">Encoding: Living Standard</a></li>
@@ -164,6 +185,7 @@
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
