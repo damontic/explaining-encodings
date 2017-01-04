@@ -109,8 +109,13 @@ Orden de los bytes:    Little Endian
 			        </section>
 
 			        <section>
-			            <h3>7 Bit Representation</h3>
-			            <p></p>
+	            		<img onclick="zoom.to({element: this})" src="images/ascii.jpg"/>
+			        </section>
+
+			        <section>
+			            <pre onclick="zoom.to({element: this})"><code class="sh">
+[damontic@seven4n]$ man ascii
+			         	</code></pre>
 			        </section>
 
 	        	</section>
@@ -147,11 +152,56 @@ Orden de los bytes:    Little Endian
 			        </section>
 
 			        <section>
+			        	<h3>Inserting characters</h3>
 			        	<ul>
-							<li>Windows: alt codes (alt + 64)</li>
-							<ul><li>decimal</li></ul>
-			        		<li>Linux: Ctrl + Shift + u</li>
-			        		<ul><li>hexadecimal</li></ul>
+							<li>IBM personal computers: DOS, Windows</li>
+							<ul>
+								<li>alt codes (alt + 64)</li>
+								<li>decimal</li>
+							</ul>
+			        		<li>Xorg</li>
+			        		<ul>
+			        			<li>Ctrl + Shift + u</li>
+			        			<li>hexadecimal</li>
+			        		</ul>
+			        		<li>Platform Independent Applications</li>
+			        		<ul>
+			        			<li>emacs: Ctrl+x 8 Enter or Meta+x insert-char</li>
+			        			<li>vim: in insert mode, the user first types Ctrl+V u, then types in the hexadecimal number of the symbol</li>
+			        			<li>LibreOffice: type the hexadecimal number of a symbol and press Alt+X</li>
+			        		</ul>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>Encoding Detection</h3>
+			        	<ul>
+			        		<li></li>
+			        		<li></li>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>Encoding Conversion</h3>
+			        	<ul>
+			        		<li></li>
+			        		<li></li>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>Linux Tools</h3>
+			        	<ul>
+			        		<li>enca</li>
+			        		<ul>
+			        			<li>detect and convert encoding of text files</li>
+			        			<li>library: libenca.so</li>
+			        		</ul>
+			        		<li>iconv</li>
+			        		<ul>
+			        			<li>convert text from one character encoding to another</li>
+			        			<li>library: glibc</li>
+			        		</ul>
 			        	</ul>
 			        </section>
 
