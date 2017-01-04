@@ -109,6 +109,14 @@ Orden de los bytes:    Little Endian
 			        </section>
 
 			        <section>
+			        	<h3>Caracteristics</h3>
+			        	<ul>
+			        		<li></li>
+			        		<li></li>
+			        	</ul>
+			        </section>
+
+			        <section>
 	            		<img onclick="zoom.to({element: this})" src="images/ascii.jpg"/>
 			        </section>
 
@@ -124,6 +132,14 @@ Orden de los bytes:    Little Endian
 
 			        <section>
 			            <h2>ISO_8859-{1-16}</h2>
+			        </section>
+
+			        <section>
+			        	<h3>Caracteristics</h3>
+			        	<ul>
+			        		<li></li>
+			        		<li></li>
+			        	</ul>
 			        </section>
 
 			        <section>
@@ -152,7 +168,7 @@ Orden de los bytes:    Little Endian
 			        </section>
 
 			        <section>
-			        	<h3>Inserting characters</h3>
+			        	<h3>Unicode Input</h3>
 			        	<ul>
 							<li>IBM personal computers: DOS, Windows</li>
 							<ul>
@@ -174,18 +190,15 @@ Orden de los bytes:    Little Endian
 			        </section>
 
 			        <section>
-			        	<h3>Encoding Detection</h3>
+			        	<h3>Charset Detection</h3>
 			        	<ul>
-			        		<li></li>
-			        		<li></li>
-			        	</ul>
-			        </section>
-
-			        <section>
-			        	<h3>Encoding Conversion</h3>
-			        	<ul>
-			        		<li></li>
-			        		<li></li>
+			        		<li>Process of heuristically guessing the character encoding of a series of bytes that represent text</li>
+			        		<li>Unreliable technique</li>
+			        		<li>Used only when specific metadata, such as a HTTP Content-Type: header is either not available, or is assumed to be untrustworthy</li>
+			        		<li>Usually involves statistical analysis of byte patterns</li>
+			        		<li>UTF-{8,16} detection works well</li>
+			        		<li>HTML documents must always have the Content-Type: header</li>
+			        		<li>Encoding Conversion</li>
 			        	</ul>
 			        </section>
 
@@ -214,6 +227,7 @@ Orden de los bytes:    Little Endian
 			            <ul>
 			            	<li><a href="https://encoding.spec.whatwg.org/">Encoding: Living Standard</a></li>
 			            	<li>David Zentgraf: <a href="http://kunststube.net/encoding/">What Every Programmer Absolutely, Positively Needs To Know About Encodings And Character Sets To Work With Text</a></li>
+			            	<li><a href="https://unicode-table.com/en/">Unicode Table Query</a></li>
 			            </ul>
 			        </section>
 
