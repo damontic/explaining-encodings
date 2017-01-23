@@ -51,7 +51,8 @@
 							<li class="fragment">Definitions</li>
 							<li class="fragment">The Keyboard and The OS</li>
 							<li class="fragment">Lookup Table Encodings</li>
-			                <li class="fragment">Unicode and UTF</li>
+			                <li class="fragment">Unicode</li>
+			                <li class="fragment">Util Tips</li>
 			                <li class="fragment">Bibliography</li>
 			            </ul>
 			        </section>
@@ -75,14 +76,32 @@
 			        <section>
 			            <h3>Bytes</h3>
 			            <img onclick="zoom.to({element: this})" src="images/byte.jpg" />
+			            <ul>
+			            	<li class="fragment"><b>How many characters can be represented with 1 bit?</b></li>
+			            	<ul>
+			            		<li class="fragment">2</li>
+			            	</ul>
+			            	<li class="fragment"><b>How many characters can be represented with 1 byte?</b></li>
+			            	<ul>
+			            		<li class="fragment">2*2*2*2*2*2*2*2 = 2^8 = 256</li>
+			            	</ul>
+			            </ul>
 			        </section>
 
 			        <section>
 			        	<h3>Codes</h3>
 			            <ul>
 			            	<li class="fragment"><b>Coded Character Set</b>: Character Set in which each character corresponds to a unique number.</li>
-			            	<li class="fragment"><b>Code Point</b>: A character and this is represented by one or more code units depending on the encoding.</li>
 			            	<li class="fragment"><b>Code Unit</b>: Number of bits an encoding uses.</li>
+			            	<ul>
+			            		<li>8-bit code units encodings:</li>
+			            		<ul>
+			            			<li>ASCII</li>
+			            		</ul>
+			            		<li>utf-16: 16-bit code units</li>
+			            		<li>utf-32: 32-bit code units</li>
+			            	</ul>
+			            	<li class="fragment"><b>Code Point</b>: A character represented by one or more code units depending on the encoding.</li>
 			            </ul>
 			        </section>
 
@@ -208,7 +227,30 @@ Orden de los bytes:    Little Endian
 		        <section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
 
 			        <section>
-			            <h2>Unicode and UTF</h2>
+			            <h2>Unicode</h2>
+			        </section>
+
+			        <section>
+			        	<h3>Unicode</h3>
+			        	<ul>
+			        		<li>UTF-8</li>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>Multiple Encodings</h3>
+			        	<ul>
+			        		<li>UTF-8</li>
+			        		<li>UTF-16</li>
+			        		<li>UTF-32</li>
+			        		<li>UTF-16</li>
+			        		<li>UTF-7</li>
+			        		<li>UTF-1</li>
+			        		<li>UTF-EBCDIC</li>
+			        		<li>SCSU</li>
+			        		<li>BOCU-1</li>
+			        		<li>GB-18030</li>
+			        	</ul>
 			        </section>
 
 			        <section>
@@ -270,6 +312,20 @@ Orden de los bytes:    Little Endian
 			        		<ul>
 			        			<li>convert text from one character encoding to another</li>
 			        			<li>library: glibc</li>
+			        		</ul>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>Looking the bytes: hex editors</h3>
+			        	<ul>
+		        			<li>hexedit</li>
+			        		<ul>
+			        			<li>conosle editor</li>
+			        		</ul>
+			        		<li>ghex</li>
+			        		<ul>
+			        			<li>GTK editor</li>
 			        		</ul>
 			        	</ul>
 			        </section>
