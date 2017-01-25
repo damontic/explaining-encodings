@@ -33,7 +33,7 @@
 
 				<section>
 					<h1><b>Character Encodings Overview</b></h1>
-				    <h2>(╯°□°）╯︵ ┻━┻</h2>
+				    <h2>😣😲🙉🙈🙊🐗🐨🐲🐝⛄🤣🤔</h2>
 				    <a href="http://www.seven4n.com">
 				    	<img data-src="./images/S4N.png">
 				    </a>
@@ -64,6 +64,7 @@
 							<li class="fragment">The Keyboard and The OS</li>
 							<li class="fragment">Lookup Table Encodings</li>
 			                <li class="fragment">Unicode</li>
+			                <li class="fragment">Programming Languages Examples</li>
 			                <li class="fragment">Util Tips</li>
 			                <li class="fragment">Bibliography</li>
 			            </ul>
@@ -75,14 +76,6 @@
 
 			        <section>
 			            <h2>Definitions</h2>
-			        </section>
-
-			        <section>
-			        	<h3>Characters</h3>
-			            <ul>
-			            	<li class="fragment"><b>Character</b>: Minimal unit of text that has semantic value.</li>
-			            	<li class="fragment"><b>Character Set</b>: Collection of Characters that might be used by multiple languages.</li>
-			            </ul>
 			        </section>
 
 			        <section>
@@ -101,34 +94,46 @@
 			        </section>
 
 			        <section>
+			            <h3>Endianness</h3>
+			            <img onclick="zoom.to({element: this})" src="images/big.png" />
+			            <img onclick="zoom.to({element: this})" src="images/little.png" />
+			            <pre onclick="zoom.to({element: this})"><code class="sh">
+[damontic@seven4n]$ lscpu | grep Endian
+Orden de los bytes:    Little Endian
+			         	</code></pre>
+			        </section>
+
+			        <section>
+			        	<h3>Characters</h3>
+			            <ul>
+			            	<li class="fragment"><b>Character</b>: Minimal unit of text that has semantic value.</li>
+			            	<li class="fragment"><b>Character Set</b>: Collection of Characters that might be used by multiple languages.</li>
+			            </ul>
+			        </section>
+
+			        <section>
 			        	<h3>Codes</h3>
 			            <ul>
-			            	<li class="fragment"><b>Coded Character Set</b>: Character Set in which each character corresponds to a unique number.</li>
-			            	<li class="fragment"><b>Code Unit</b>: Number of bits an encoding uses.</li>
+			            	<li class="fragment"><b>Code Point</b>: Any numerical value in the Encoding codespace.</li>
 			            	<ul>
-			            		<li>8-bit code units encodings:</li>
-			            		<ul>
-			            			<li>ASCII</li>
-			            		</ul>
-			            		<li>utf-16: 16-bit code units</li>
-			            		<li>utf-32: 32-bit code units</li>
+		            			<li class="fragment">Unicode: U+3243F</li>
+		            			<li class="fragment">ISO-8859-1: 0x41</li>
+		            		</ul>
+		            		<li class="fragment"><b>Code Unit</b>: The minimal bit combination that can represent a unit of encoded text.</li>
+			            	<ul>
+			            		<li class="fragment">ASCII: 7-bit code units</li>
+			            		<li class="fragment">Extended ASCII: 8-bit code units</li>
+			            		<li class="fragment">ISO-8859-1: 8-bit code units</li>
+			            		<li class="fragment">utf-16: 16-bit code units</li>
+			            		<li class="fragment">utf-32: 32-bit code units</li>
 			            	</ul>
-			            	<li class="fragment"><b>Code Point</b>: A character represented by one or more code units depending on the encoding.</li>
+			            	<li class="fragment"><b>Coded Character Set</b>: A mapping between a code point and a character.</li>
 			            </ul>
 			        </section>
 
 			        <section>
 			            <h3>File</h3>
 			            <img onclick="zoom.to({element: this})" src="images/lorem.png" />
-			        </section>
-
-			        <section>
-			            <h3>Endianness and BOM</h3>
-			            <img onclick="zoom.to({element: this})" src="images/bom.png" />
-			            <pre onclick="zoom.to({element: this})"><code class="sh">
-[damontic@seven4n]$ lscpu | grep Endian
-Orden de los bytes:    Little Endian
-			         	</code></pre>
 			        </section>
 
 		        </section>
@@ -215,8 +220,9 @@ Orden de los bytes:    Little Endian
 			        </section>
 
 			        <section>
-			        	<h3>Comparison</h3>
-			        	<a href="https://en.wikipedia.org/wiki/ISO/IEC_8859#Table">Comparison Table</a>
+			        	<h3>ISO8859 Varieties Comparison</h3>
+			        	<img onclick="zoom.to({element: this})" src="images/iso8859_comparison.png" height="50%" width="50%" />
+			        	<p><a href="https://en.wikipedia.org/wiki/ISO/IEC_8859#Table">Complete Comparison Table</a></p>
 			        </section>
 
 			        <section>
@@ -245,7 +251,7 @@ Orden de los bytes:    Little Endian
 			        <section>
 			        	<h3>Unicode</h3>
 			        	<ul>
-			        		<li>UTF-8</li>
+			        		<li></li>
 			        	</ul>
 			        </section>
 
@@ -263,6 +269,15 @@ Orden de los bytes:    Little Endian
 			        		<li>BOCU-1</li>
 			        		<li>GB-18030</li>
 			        	</ul>
+			        </section>
+
+			        <section>
+			            <h3>Endianness and BOM</h3>
+			            <img onclick="zoom.to({element: this})" src="images/bom.png" />
+			            <pre onclick="zoom.to({element: this})"><code class="sh">
+[damontic@seven4n]$ lscpu | grep Endian
+Orden de los bytes:    Little Endian
+			         	</code></pre>
 			        </section>
 
 			        <section>
@@ -338,6 +353,38 @@ Orden de los bytes:    Little Endian
 			        		<li>ghex</li>
 			        		<ul>
 			        			<li>GTK editor</li>
+			        		</ul>
+			        	</ul>
+			        </section>
+
+		        </section>
+
+				<section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
+
+			        <section>
+			            <h2>Programming Language Examples</h2>
+			        </section>
+
+			        <section>
+			        	<h3>JVM: Java / Scala / Closure / etc...</h3>
+			        	<ul>
+			        		<li class="fragment">How are Strings represented internally in the JVM?</li>
+			        		<li class="fragment">Does the source file encoding affect the <b>Compilation</b> in the JVM?</li>
+			        		<li class="fragment">Does the bytecode encoding affect the <b>Execution</b> in the JVM?</li>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>JVM</h3>
+			        	<p>Characters represented internally as UTF-16</p>
+			        	<ul>
+			        		<li class="fragment">javac</li>
+			        		<ul>
+			        			<li class="fragment">-encoding: Sets the source file encoding name, such as EUC-JP and UTF-8. If the -encoding option is not specified, then the platform default converter is used.</li>
+			        		</ul>
+			        		<li class="fragment">java</li>
+			        		<ul>
+			        			<li>-Dfile.encoding: </li>
 			        		</ul>
 			        	</ul>
 			        </section>
