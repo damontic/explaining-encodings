@@ -116,8 +116,8 @@ Orden de los bytes:    Little Endian
 			            <ul>
 			            	<li class="fragment"><b>Code Point</b>: Any numerical value in the Encoding codespace.</li>
 			            	<ul>
+			            		<li class="fragment">ASCII: 0x41</li>
 		            			<li class="fragment">Unicode: U+3243F</li>
-		            			<li class="fragment">ISO-8859-1: 0x41</li>
 		            		</ul>
 		            		<li class="fragment"><b>Code Unit</b>: The minimal bit combination that can represent a unit of encoded text.</li>
 			            	<ul>
@@ -129,6 +129,12 @@ Orden de los bytes:    Little Endian
 			            	</ul>
 			            	<li class="fragment"><b>Coded Character Set</b>: A mapping between a code point and a character.</li>
 			            </ul>
+			        </section>
+
+			        <section>
+			            <h3>Fonts</h3>
+			            <img onclick="zoom.to({element: this})" src="images/gnome-font-viewer.png" />
+			            <p>gnome-font-viewer</p>
 			        </section>
 
 			        <section>
@@ -145,41 +151,38 @@ Orden de los bytes:    Little Endian
 			        </section>
 
 			        <section>
-			        	<h3>Mechanical Layout</h3>
-			        	<p>The placements and keys of a keyboard.</p>
-			        </section>
-
-			        <section>
-			        	<h3>Visual layout</h3>
 			        	<ul>
-			        		<li></li>
-			        		<li></li>
-			        	</ul>
-			        </section>
-
-			        <section>
-			        	<h3>Functional layout</h3>
-			        	<ul>
-			        		<li></li>
-			        		<li></li>
+			        	<li class="fragment"><b>Mechanical Layout</b></li>
+				        	<ul>
+				        		<li class="fragment">The placements and keys of a keyboard.</li>
+				        	</ul>
+			        	<li class="fragment"><b>Visual layout</b></li>
+				        	<ul>
+				        		<li class="fragment">The arrangement of the legends (labels, markings, engravings) that appear on the keys of a keyboard.</li>
+				        	</ul>
+			        	<li class="fragment"><b>Functional Layout</b></li>
+				        	<ul>
+				        		<li class="fragment">The arrangement of the key-meaning associations, determined in software, of all the keys of a keyboard.</li>
+				        	</ul>
 			        	</ul>
 			        </section>
 
 			        <section>
 			        	<h3>Dead Keys</h3>
-			        	<ul>
-			        		<li></li>
-			        		<li></li>
-			        	</ul>
+			        	<p>Special kind of a modifier key that, instead of being held while another key is struck, is pressed and released before the other key.</p>
+			        	<img onclick="zoom.to({element: this})" src="images/deadkeys.png" />
 			        </section>
 
 			        <section>
-			        	<h3>Key Strokes Processing</h3>
-			        	<ul>
-			        		<li>GUI Applications</li>
-			        		<li>Text Mode Applications, running in a terminal</li>
-			        		<li>Remote Application, accessed over the network</li>
-			        	</ul>
+			        	<h3>Linux GUI Applications: Input</h3>
+			        	<img onclick="zoom.to({element: this})" src="images/gui_apps1.png" />
+			        	<img onclick="zoom.to({element: this})" src="images/gui_apps2.png" />
+			        </section>
+
+			        <section>
+			        	<h3>Linux GUI Applications: Output</h3>
+			        	<img onclick="zoom.to({element: this})" src="images/gui_apps3.png" />
+			        	<p>Linux xev: X Server Events sent to X's windows</p>
 			        </section>
 
 		        </section>
@@ -192,35 +195,11 @@ Orden de los bytes:    Little Endian
 
 			        <section>
 			        	<h3>ASCII</h3>
-			        	<ul>
-			        		<li>Bit Width</li>
-			        		<li>Internal Organization</li>
-			        		<li>Character Order</li>
-			        		<li>Control Characters</li>
-			        		<li>Printable Characters</li>
-			        	</ul>
-			        </section>
-
-			        <section>
 	            		<img onclick="zoom.to({element: this})" src="images/ascii.png"/>
 			        </section>
 
 			        <section>
-			            <pre onclick="zoom.to({element: this})"><code class="sh">
-[damontic@seven4n]$ man ascii
-			         	</code></pre>
-			        </section>
-
-			        <section>
-			        	<h3>ISO_8859-{1-16}</h3>
-			        	<ul>
-			        		<li></li>
-			        		<li></li>
-			        	</ul>
-			        </section>
-
-			        <section>
-			        	<h3>ISO8859 Varieties Comparison</h3>
+			        	<h3>ISO_8859-{1-16} Varieties Comparison</h3>
 			        	<img onclick="zoom.to({element: this})" src="images/iso8859_comparison.png" height="50%" width="50%" />
 			        	<p><a href="https://en.wikipedia.org/wiki/ISO/IEC_8859#Table">Complete Comparison Table</a></p>
 			        </section>
@@ -240,6 +219,17 @@ Orden de los bytes:    Little Endian
 			        	</ul>
 			        </section>
 
+			        <section>
+			            <pre onclick="zoom.to({element: this})"><code class="sh">
+[damontic@seven4n]$ man charsets
+[damontic@seven4n]$ man ascii
+[damontic@seven4n]$ man iso_8859-1
+[damontic@seven4n]$ man iso_8859-2
+[damontic@seven4n]$ man utf-8
+[damontic@seven4n]$ man unicode
+			         	</code></pre>
+			        </section>
+
 		        </section>
 
 		        <section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
@@ -251,7 +241,9 @@ Orden de los bytes:    Little Endian
 			        <section>
 			        	<h3>Unicode</h3>
 			        	<ul>
-			        		<li></li>
+			        		<li class="fragment">Standard ISO 10646 defines the Universal Character Set (UCS)</li>
+			        		<li class="fragment">UCS contains all characters of all other character set standards</li>
+			        		<li class="fragment">Represent practically all known languages</li>
 			        	</ul>
 			        </section>
 
@@ -272,7 +264,7 @@ Orden de los bytes:    Little Endian
 			        </section>
 
 			        <section>
-			            <h3>Endianness and BOM</h3>
+			            <h3>BOM</h3>
 			            <img onclick="zoom.to({element: this})" src="images/bom.png" />
 			            <pre onclick="zoom.to({element: this})"><code class="sh">
 [damontic@seven4n]$ lscpu | grep Endian
@@ -282,6 +274,38 @@ Orden de los bytes:    Little Endian
 
 			        <section>
 			        	<h3>Multi Byte representation</h3>
+			        </section>
+
+		        </section>
+
+				<section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
+
+			        <section>
+			            <h2>Programming Language Examples</h2>
+			        </section>
+
+			        <section>
+			        	<h3>JVM: Java / Scala / Closure / etc...</h3>
+			        	<ul>
+			        		<li class="fragment">How are Strings represented internally in the JVM?</li>
+			        		<li class="fragment">Does the source file encoding affect the <b>Compilation</b> in the JVM?</li>
+			        		<li class="fragment">Does the bytecode encoding affect the <b>Execution</b> in the JVM?</li>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>JVM</h3>
+			        	<p>Characters represented internally as UTF-16</p>
+			        	<ul>
+			        		<li class="fragment">javac</li>
+			        		<ul>
+			        			<li class="fragment">-encoding: Sets the source file encoding name, such as EUC-JP and UTF-8. If the -encoding option is not specified, then the platform default converter is used.</li>
+			        		</ul>
+			        		<li class="fragment">java</li>
+			        		<ul>
+			        			<li>-Dfile.encoding: Default Character encoding in Java or charset is the character encoding used by JVM to convert <b>bytes</b> into Strings or characters when you don't define java system property "file.encoding". Java gets character encoding by calling System.getProperty("file.encoding","UTF-8") at the time of JVM start-up</li>
+			        		</ul>
+			        	</ul>
 			        </section>
 
 		        </section>
@@ -353,38 +377,6 @@ Orden de los bytes:    Little Endian
 			        		<li>ghex</li>
 			        		<ul>
 			        			<li>GTK editor</li>
-			        		</ul>
-			        	</ul>
-			        </section>
-
-		        </section>
-
-				<section data-background="./images/S4N.png" data-state="img-top-right" data-background-size="250px">
-
-			        <section>
-			            <h2>Programming Language Examples</h2>
-			        </section>
-
-			        <section>
-			        	<h3>JVM: Java / Scala / Closure / etc...</h3>
-			        	<ul>
-			        		<li class="fragment">How are Strings represented internally in the JVM?</li>
-			        		<li class="fragment">Does the source file encoding affect the <b>Compilation</b> in the JVM?</li>
-			        		<li class="fragment">Does the bytecode encoding affect the <b>Execution</b> in the JVM?</li>
-			        	</ul>
-			        </section>
-
-			        <section>
-			        	<h3>JVM</h3>
-			        	<p>Characters represented internally as UTF-16</p>
-			        	<ul>
-			        		<li class="fragment">javac</li>
-			        		<ul>
-			        			<li class="fragment">-encoding: Sets the source file encoding name, such as EUC-JP and UTF-8. If the -encoding option is not specified, then the platform default converter is used.</li>
-			        		</ul>
-			        		<li class="fragment">java</li>
-			        		<ul>
-			        			<li>-Dfile.encoding: </li>
 			        		</ul>
 			        	</ul>
 			        </section>

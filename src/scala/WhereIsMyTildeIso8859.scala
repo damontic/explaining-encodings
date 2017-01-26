@@ -1,30 +1,30 @@
-def print_in_various_formats(letter : String) : Unit = {
-	val letter_bytes = letter.getBytes()
-	println("As UTF-8:\t\t" + new String(letter_bytes, "utf-8"))
-	println("As cp1252:\t\t" + new String(letter_bytes, "cp1252"))
-	println("As ISO-8859-2:\t\t" + new String(letter_bytes, "ISO-8859-2"))
-}
+object Test {
+	def print_bytes(some_bytes : Array[Byte]) = {
+		some_bytes foreach {
+			x => print(x.toHexString)
+			print(" ")
+		}
+		println
+	}
+	def print_in_various_formats(letter : String) : Unit = {
+		val letter_bytes = letter.getBytes()
+		print_bytes(letter_bytes)
 
-print_in_various_formats("")
-println()
-print_in_various_formats("√Å")
-println()
-print_in_various_formats("√©")
-println()
-print_in_various_formats("√â")
-println()
-print_in_various_formats("√≠")
-println()
-print_in_various_formats("√ç")
-println()
-print_in_various_formats("√≥")
-println()
-print_in_various_formats("√ì")
-println()
-print_in_various_formats("√∫")
-println()
-print_in_various_formats("√ö")
-println()
-print_in_various_formats("√±")
-println()
-print_in_various_formats("√ë")
+		val u = new String(letter_bytes, "utf-8")
+		println("As UTF-8:\t\t" + u)
+		print_bytes(u.getBytes)
+
+		val c = new String(letter_bytes, "cp1252")
+		println("As cp1252:\t\t" + c)
+		print_bytes(c.getBytes)
+
+		val i = new String(letter_bytes, "ISO-8859-2")
+		println("As ISO-8859-2:\t\t" + i)
+		print_bytes(i.getBytes)
+
+		println
+	}
+	def main(args : Array[String]) : Unit = {
+		List("·","¡", "È", "…", "Ì", "Õ", "Û", "”", "˙", "⁄", "Ò", "—") map print_in_various_formats
+	}
+}
