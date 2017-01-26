@@ -199,6 +199,11 @@ Orden de los bytes:    Little Endian
 			        </section>
 
 			        <section>
+			        	<h3>ASCII</h3>
+	            		<img onclick="zoom.to({element: this})" src="images/ascii-encoding.png"/>
+			        </section>
+
+			        <section>
 			        	<h3>ISO_8859-{1-16} Varieties Comparison</h3>
 			        	<img onclick="zoom.to({element: this})" src="images/iso8859_comparison.png" height="50%" width="50%" />
 			        	<p><a href="https://en.wikipedia.org/wiki/ISO/IEC_8859#Table">Complete Comparison Table</a></p>
@@ -242,9 +247,31 @@ Orden de los bytes:    Little Endian
 			        	<h3>Unicode</h3>
 			        	<ul>
 			        		<li class="fragment">Standard ISO 10646 defines the Universal Character Set (UCS)</li>
-			        		<li class="fragment">UCS contains all characters of all other character set standards</li>
-			        		<li class="fragment">Represent practically all known languages</li>
+			        		<li class="fragment">All characters of all other character set standards</li>
+			        		<li class="fragment">Practically all known languages</li>
+			        		<li class="fragment">Versioned</li>
+			        		<li class="fragment">128,172+ defined characters (V 9.0)</li>
 			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>Unicode</h3>
+			        	<ul>
+			        		<li class="fragment">Character Space is divided into spaces with 17 planes * 65,536 characters each</li>
+			        		<li class="fragment">1,114,112 possible characters (0x0 to 0x10FFFF)</li>
+			        		<li class="fragment">Basic Multilingual Plane (BMP): 4 Hexadecimal Digits (e.g. U+0058)</li>
+			        		<li class="fragment">Other planes use 5 or 6 Hexadecimal Digits</li>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>Unicode Planes</h3>
+			        	<img onclick="zoom.to({element: this})" src="images/unicode-charset.png"/>
+			        </section>
+
+			        <section>
+			        	<h3>Unicode BMP and Blocks</h3>
+			        	<img onclick="zoom.to({element: this})" src="images/unicode_character_set.jpg" width="90%" height="90%"/>
 			        </section>
 
 			        <section>
@@ -264,6 +291,32 @@ Orden de los bytes:    Little Endian
 			        </section>
 
 			        <section>
+			            <h3>UTF-8 UTF-16 UTF-1632</h3>
+			            <img onclick="zoom.to({element: this})" src="images/encodings.png" />
+			        </section>
+
+			        <section>
+			        	<h3>UTF-32</h3>
+			        	<ul>
+			            	<li class="fragment">Always uses 4 bytes to represent Unicode characters</li>
+			            	<li class="fragment">You can calculate the number of characters in a UTF-32 string by only counting bytes</li>
+			            	<li class="fragment">Incompatible with ASCII 😲</li>
+			            	<li class="fragment">Endianness Problems solved with BOM</li>
+		            	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>UTF-16</h3>
+			        	<ul>
+			            	<li class="fragment">Uses 2 to 4 bytes to represent Unicode characters</li>
+			            	<li class="fragment">Has the smallest capability between the 3 encodings 😲</li>
+			            	<li class="fragment">Incompatible with ASCII 😲</li>
+			            	<li class="fragment">Use <b>Surrogate Pairs</b> to encode points outside of the BMP (0x10000 to 0x10FFFF)</li>
+			            	<li class="fragment">Endianness Problems solved with BOM: U+FEFF</li>
+		            	</ul>
+			        </section>
+
+			        <section>
 			            <h3>BOM</h3>
 			            <img onclick="zoom.to({element: this})" src="images/bom.png" />
 			            <pre onclick="zoom.to({element: this})"><code class="sh">
@@ -273,7 +326,15 @@ Orden de los bytes:    Little Endian
 			        </section>
 
 			        <section>
-			        	<h3>Multi Byte representation</h3>
+			        	<h3>UTF-8</h3>
+			        	<ul>
+		            		<li class="fragment">1 to 6 bytes to represent Unicode characters</li>
+		            		<li class="fragment">Compatible with ASCII</li>
+		            	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>UTF-8 extended</h3>
 			        </section>
 
 		        </section>
@@ -297,14 +358,30 @@ Orden de los bytes:    Little Endian
 			        	<h3>JVM</h3>
 			        	<p>Characters represented internally as UTF-16</p>
 			        	<ul>
-			        		<li class="fragment">javac</li>
+			        		<li class="fragment">javac / scalac</li>
 			        		<ul>
 			        			<li class="fragment">-encoding: Sets the source file encoding name, such as EUC-JP and UTF-8. If the -encoding option is not specified, then the platform default converter is used.</li>
 			        		</ul>
-			        		<li class="fragment">java</li>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>JVM</h3>
+			        	<p>Characters represented internally as UTF-16</p>
+			        	<ul>
+			        		<li class="fragment">java / scala</li>
 			        		<ul>
-			        			<li>-Dfile.encoding: Default Character encoding in Java or charset is the character encoding used by JVM to convert <b>bytes</b> into Strings or characters when you don't define java system property "file.encoding". Java gets character encoding by calling System.getProperty("file.encoding","UTF-8") at the time of JVM start-up</li>
+			        			<li class="fragment">-Dfile.encoding: Default Character encoding in Java or charset is the character encoding used by JVM to convert <b>bytes</b> into Strings or characters when you don't define java system property "file.encoding". Java gets character encoding by calling System.getProperty("file.encoding","UTF-8") at the time of JVM start-up</li>
 			        		</ul>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>JVM Examples</h3>
+			        	<ul>
+			        		<li class="fragment">🐨.scala</li>
+			        		<li class="fragment">WhereIsMyTildeUTF8.scala</li>
+			        		<li class="fragment">WhereIsMyTildeISO8859-1.scala</li>
 			        	</ul>
 			        </section>
 
@@ -378,6 +455,17 @@ Orden de los bytes:    Little Endian
 			        		<ul>
 			        			<li>GTK editor</li>
 			        		</ul>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>Excel</h3>
+			        	<ul>
+		        			<li>If the file starts with the bytes D0 CF 11 E0 A1 B1 1A E1 (source MSDN: Developing a tool to recognise MS Office file types (.doc, .xls, .mdb, .ppt)) + some other unknown conditions, it is identified as being an Excel native document</li>
+		        			<li>Else, if the file starts with the bytes EF BB BF (UTF-8 Byte Order Mark, aka UTF-8 BOM), it is identified as being a text file in UTF-8 encoding</li>
+		        			<li>Else, if the file starts with the bytes FF FE (UTF-16LE BOM), it is identified as being a text file in UTF-16LE (UTF-16 little endian) encoding</li>
+		        			<li>Else, if the file starts with the bytes FE FF (UTF-16BE BOM), it is identified as being a text file in UTF-16BE (UTF-16 big endian) encoding</li>
+		        			<li>Else, it is processed as if being a text file in current PC locale encoding (Windows control panel, Regional and language options, choose Country).</li>
 			        	</ul>
 			        </section>
 
