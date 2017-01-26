@@ -298,6 +298,8 @@ LC_ALL=
 [damontic@seven4n]$ man ascii
 [damontic@seven4n]$ man iso_8859-1
 [damontic@seven4n]$ man iso_8859-2
+[damontic@seven4n]$ man cp1251
+[damontic@seven4n]$ man cp1252
 [damontic@seven4n]$ man utf-8
 [damontic@seven4n]$ man unicode
 			         	</code></pre>
@@ -309,6 +311,7 @@ LC_ALL=
 
 			        <section>
 			            <h2>Unicode</h2>
+			            <img onclick="zoom.to({element: this})" src="images/nagoya.jpg"/>
 			        </section>
 
 			        <section>
@@ -348,7 +351,6 @@ LC_ALL=
 			        		<li>UTF-8</li>
 			        		<li>UTF-16</li>
 			        		<li>UTF-32</li>
-			        		<li>UTF-16</li>
 			        		<li>UTF-7</li>
 			        		<li>UTF-1</li>
 			        		<li>UTF-EBCDIC</li>
@@ -359,7 +361,7 @@ LC_ALL=
 			        </section>
 
 			        <section>
-			            <h3>UTF-8 UTF-16 UTF-1632</h3>
+			            <h3>UTF-8 UTF-16 UTF-32</h3>
 			            <img onclick="zoom.to({element: this})" src="images/encodings.png" />
 			        </section>
 
@@ -381,16 +383,28 @@ LC_ALL=
 			            	<li class="fragment">Incompatible with ASCII 😲</li>
 			            	<li class="fragment">Use <b>Surrogate Pairs</b> to encode points outside of the BMP (0x10000 to 0x10FFFF)</li>
 			            	<li class="fragment">Endianness Problems solved with BOM: U+FEFF</li>
+			            	<li class="fragment">UTF-16LE and UTF-16BE</li>
+		            	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>UTF-16 Unicode mapping</h3>
+			        	<ul>
+			            	<li class="fragment">U+0000 to U+D7FF and U+E000 to U+FFFF</li>
+			            	<li class="fragment">U+D800 to U+DFFF: <b>reserved</b></li>
+			            	<li class="fragment">U+10000 to U+10FFFF</li>
+			            	<img class="fragment" onclick="zoom.to({element: this})" src="images/utf16.png" />
 		            	</ul>
 			        </section>
 
 			        <section>
 			            <h3>BOM</h3>
 			            <img onclick="zoom.to({element: this})" src="images/bom.png" />
-			            <pre onclick="zoom.to({element: this})"><code class="sh">
-[damontic@seven4n]$ lscpu | grep Endian
-Orden de los bytes:    Little Endian
-			         	</code></pre>
+			        </section>
+
+			        <section>
+			        	<h3>UTF-8</h3>
+			        	<img onclick="zoom.to({element: this})" data-src="./images/utf8web.svg">
 			        </section>
 
 			        <section>
@@ -398,11 +412,27 @@ Orden de los bytes:    Little Endian
 			        	<ul>
 		            		<li class="fragment">1 to 6 bytes to represent Unicode characters</li>
 		            		<li class="fragment">Compatible with ASCII</li>
+		            		<li class="fragment"><a href="http://utf8everywhere.org/">utf8everywhere Manifesto</a></li>
 		            	</ul>
 			        </section>
 
 			        <section>
-			        	<h3>UTF-8 extended</h3>
+			        	<h3>UTF-8</h3>
+			        	<img class="fragment" onclick="zoom.to({element: this})" data-src="./images/utf8-table.png">
+			        	<img class="fragment" onclick="zoom.to({element: this})" data-src="./images/utf8_examples.png">
+			        </section>
+
+			        <section>
+			        	<h3>Beware!! Faulty/Incomplete UTF-8 implementations</h3>
+			        	<ul>
+			        		<li>MySQL's utf-8: just BMP</li>
+		        			<li>PHP's utf-8: depending on the PHP version, may need utility functions to be created MANUALLY</li>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>Unicode Encodings Comparison</h3>
+			        	<img class="fragment" onclick="zoom.to({element: this})" data-src="./images/unicode_encodings_comparison.png">
 			        </section>
 
 		        </section>
