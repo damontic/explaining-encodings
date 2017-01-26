@@ -186,7 +186,54 @@ Orden de los bytes:    Little Endian
 			        </section>
 
 			        <section>
+			        	<h3>Locales</h3>
+			        	<ul>
+			        		<li class="fragment">Rendering text</li>
+			        		<li class="fragment">Displaying regional monetary values</li>
+			        		<li class="fragment">Displaying time and date formats</li>
+			        		<li class="fragment">Alphabetic idiosyncrasies</li>
+			        	</ul>
+			        </section>
+
+			        <section>
 			        	<h3>Linux Locale</h3>
+			        	<ul>
+			        		<li class="fragment">glibc uses and installs locale</li>
+			        		<li class="fragment">Must be generated first:</li>
+			        		<ul>
+			        			<li class="fragment">/etc/locale.gen</li>
+			        			<li class="fragment">locale.gen</li>
+			        		</ul>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>Linux Locale</h3>
+			        	<ul>
+            				<pre onclick="zoom.to({element: this})"><code class="sh">
+[damontic@seven4n]$ locale -a
+C
+es_ES.utf8
+POSIX
+			         		</code></pre>
+            				<pre onclick="zoom.to({element: this})"><code class="sh">
+[damontic@seven4n]$ locale
+LANG=es_ES.utf8
+LC_CTYPE="es_ES.utf8"
+LC_NUMERIC=es_ES.UTF-8
+LC_TIME=es_ES.UTF-8
+LC_COLLATE="es_ES.utf8"
+LC_MONETARY=es_ES.UTF-8
+LC_MESSAGES="es_ES.utf8"
+LC_PAPER=es_ES.UTF-8
+LC_NAME="es_ES.utf8"
+LC_ADDRESS="es_ES.utf8"
+LC_TELEPHONE="es_ES.utf8"
+LC_MEASUREMENT=es_ES.UTF-8
+LC_IDENTIFICATION="es_ES.utf8"
+LC_ALL=
+			         		</code></pre>
+			        	</ul>
 			        </section>
 
 			        <section>
