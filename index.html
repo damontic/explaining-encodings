@@ -493,21 +493,21 @@ LC_ALL=
 			        <section>
 			        	<h3>Unicode Input</h3>
 			        	<ul>
-							<li>IBM personal computers: DOS, Windows</li>
+							<li class="fragment">IBM personal computers: DOS, Windows</li>
 							<ul>
-								<li>alt codes (alt + 64)</li>
-								<li>decimal</li>
+								<li class="fragment">alt codes (alt + 64)</li>
+								<li class="fragment">decimal</li>
 							</ul>
-			        		<li>Xorg</li>
+			        		<li class="fragment">Xorg</li>
 			        		<ul>
-			        			<li>Ctrl + Shift + u</li>
-			        			<li>hexadecimal</li>
+			        			<li class="fragment">Ctrl + Shift + u</li>
+			        			<li class="fragment">hexadecimal</li>
 			        		</ul>
-			        		<li>Platform Independent Applications</li>
+			        		<li class="fragment">Platform Independent Applications</li>
 			        		<ul>
-			        			<li>emacs: Ctrl+x 8 Enter or Meta+x insert-char</li>
-			        			<li>vim: in insert mode, the user first types Ctrl+V u, then types in the hexadecimal number of the symbol</li>
-			        			<li>LibreOffice: type the hexadecimal number of a symbol and press Alt+X</li>
+			        			<li class="fragment">emacs: Ctrl+x 8 Enter or Meta+x insert-char</li>
+			        			<li class="fragment">vim: in insert mode, the user first types Ctrl+V u, then types in the hexadecimal number of the symbol</li>
+			        			<li class="fragment">LibreOffice: type the hexadecimal number of a symbol and press Alt+X</li>
 			        		</ul>
 			        	</ul>
 			        </section>
@@ -515,28 +515,28 @@ LC_ALL=
 			        <section>
 			        	<h3>Charset Detection</h3>
 			        	<ul>
-			        		<li>Process of heuristically guessing the character encoding of a series of bytes that represent text</li>
-			        		<li>Unreliable technique</li>
-			        		<li>Used only when specific metadata, such as a HTTP Content-Type: header is either not available, or is assumed to be untrustworthy</li>
-			        		<li>Usually involves statistical analysis of byte patterns</li>
-			        		<li>UTF-{8,16} detection works well</li>
-			        		<li>HTML documents must always have the Content-Type: header</li>
-			        		<li>Encoding Conversion</li>
+			        		<li class="fragment">Process of heuristically guessing the character encoding of a series of bytes that represent text</li>
+			        		<li class="fragment">Unreliable technique</li>
+			        		<li class="fragment">Used only when specific metadata, such as a HTTP Content-Type: header is either not available, or is assumed to be untrustworthy</li>
+			        		<li class="fragment">Usually involves statistical analysis of byte patterns</li>
+			        		<li class="fragment">UTF-{8,16} detection works well</li>
+			        		<li class="fragment">HTML documents must always have the Content-Type: header</li>
+			        		<li class="fragment">Encoding Conversion</li>
 			        	</ul>
 			        </section>
 
 			        <section>
 			        	<h3>Linux Tools</h3>
 			        	<ul>
-			        		<li>enca</li>
+			        		<li class="fragment">enca</li>
 			        		<ul>
-			        			<li>detect and convert encoding of text files</li>
-			        			<li>library: libenca.so</li>
+			        			<li class="fragment">detect and convert encoding of text files</li>
+			        			<li class="fragment">library: libenca.so</li>
 			        		</ul>
-			        		<li>iconv</li>
+			        		<li class="fragment">iconv</li>
 			        		<ul>
-			        			<li>convert text from one character encoding to another</li>
-			        			<li>library: glibc</li>
+			        			<li class="fragment">convert text from one character encoding to another</li>
+			        			<li class="fragment">library: glibc</li>
 			        		</ul>
 			        	</ul>
 			        </section>
@@ -544,13 +544,13 @@ LC_ALL=
 			        <section>
 			        	<h3>Looking the bytes: hex editors</h3>
 			        	<ul>
-		        			<li>hexedit</li>
+		        			<li class="fragment">hexedit</li>
 			        		<ul>
-			        			<li>conosle editor</li>
+			        			<li class="fragment">conosle editor</li>
 			        		</ul>
-			        		<li>ghex</li>
+			        		<li class="fragment">ghex</li>
 			        		<ul>
-			        			<li>GTK editor</li>
+			        			<li class="fragment">GTK editor</li>
 			        		</ul>
 			        	</ul>
 			        </section>
@@ -558,11 +558,17 @@ LC_ALL=
 			        <section>
 			        	<h3>Excel</h3>
 			        	<ul>
-		        			<li>If the file starts with the bytes D0 CF 11 E0 A1 B1 1A E1 (source MSDN: Developing a tool to recognise MS Office file types (.doc, .xls, .mdb, .ppt)) + some other unknown conditions, it is identified as being an Excel native document</li>
-		        			<li>Else, if the file starts with the bytes EF BB BF (UTF-8 Byte Order Mark, aka UTF-8 BOM), it is identified as being a text file in UTF-8 encoding</li>
-		        			<li>Else, if the file starts with the bytes FF FE (UTF-16LE BOM), it is identified as being a text file in UTF-16LE (UTF-16 little endian) encoding</li>
-		        			<li>Else, if the file starts with the bytes FE FF (UTF-16BE BOM), it is identified as being a text file in UTF-16BE (UTF-16 big endian) encoding</li>
-		        			<li>Else, it is processed as if being a text file in current PC locale encoding (Windows control panel, Regional and language options, choose Country).</li>
+		        			<li class="fragment">If file starts bytes: D0 CF 11 E0 A1 B1 1A E1 + some other unknown conditions => Excel native document</li>
+		        			<li class="fragment">Else, If file starts bytes: EF BB BF (UTF-8 Byte Order Mark, aka UTF-8 BOM) => text file in UTF-8 encoding</li>
+			        	</ul>
+			        </section>
+
+			        <section>
+			        	<h3>Excel</h3>
+			        	<ul>
+		        			<li class="fragment">Else, If file starts bytes: FF FE (UTF-16LE BOM) => text file in UTF-16LE (UTF-16 little endian) encoding</li>
+		        			<li class="fragment">Else, If file starts bytes: FE FF (UTF-16BE BOM) => text file in UTF-16BE (UTF-16 big endian) encoding</li>
+		        			<li class="fragment">Else => text file in current PC locale encoding (Windows control panel, Regional and language options, choose Country).</li>
 			        	</ul>
 			        </section>
 
